@@ -1,0 +1,174 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+*
+{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins',sans-serif;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #000000;
+}
+.container{
+    position: relative;
+}
+.container .card
+{
+    position: relative;
+    width: 320px;
+    height: 450px;
+    background: #232323;
+    border-radius: 15px;
+    overflow: hidden;
+}
+.container .card:before
+{
+    content:'';
+    position: absolute;
+    background: #9bdc28;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    clip-path: circle(150px at 80% 20%);
+    transition: 0.5s ease-in-out;
+}
+.container .card:hover:before
+{
+    clip-path: circle(300px at 80% -20%);
+}
+.container .card:after
+{
+    content:'Nike';
+    position: absolute;
+    top: 30%;
+    left: -15%;
+    font-size: 11em;
+    font-weight: 800;
+    font-style: italic;
+    color: rgba(255, 255, 255, 0.05);
+}
+.container .card .ImgBox{
+    position: absolute;
+    top: 35%;
+    left: 5%;
+    transform: translateY(-50%);
+    z-index: 10000;
+    transition: 0.5s;
+}
+.container .card:hover .ImgBox{
+    top: 6%;
+    transform: translateY(20%);
+}
+.container .card .ImgBox img{
+    transform: rotate(-25deg);
+    position: absolute;
+    width: 270px;
+}
+.container .card .ContentBox
+{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+    text-align: center;
+    transition: 1s;
+    z-index: 10;
+}
+.container .card:hover .ContentBox
+{
+    height: 210px;
+}
+.container .card .ContentBox h2{
+    position: relative;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: #ffffff;
+}
+.container .card .ContentBox .Size,
+.container .card .ContentBox .Color
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 20px;
+    transition: 0.5s;
+    opacity: 0;
+    visibility: hidden;
+}
+.container .card:hover .ContentBox .Size{
+    opacity: 1;
+    visibility: visible;
+    transition-delay: 0.5s;
+}
+.container .card:hover .ContentBox .Color{
+    opacity: 1;
+    visibility: visible;
+    transition-delay: 0.6s;
+}
+.container .card .ContentBox .Size h3,
+.container .card .ContentBox .Color h3
+{
+    color: #ffffff;
+    font-weight: 300;
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: 2px;
+    margin-right: 10px;
+}
+.container .card .ContentBox .Size span{
+    width: 26px;
+    height: 26px;
+    line-height: 26px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 500;
+    display: inline-block;
+    color: #111;
+    background: #ffffff;
+    margin: 0px 5px;
+    transition: 0.5s;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.container .card .ContentBox .Size span:hover{
+    background: #9bdc28;
+}
+.container .card .ContentBox .Color span{
+    width: 20px;
+    height: 20px;
+    background: #ff0;
+    border-radius: 50%;
+    margin: 0px 5px;
+    cursor: pointer;
+}
+.container .card .ContentBox .Color span:nth-child(2){
+    background: #9bdc28;
+}
+.container .card .ContentBox .Color span:nth-child(3){
+    background: #03a9f4;
+}
+.container .card .ContentBox .Color span:nth-child(4){
+    background: #e91e63;
+}
+.container .card .ContentBox a{
+    display: inline-block;
+    padding: 10px 20px;
+    background: #fff;
+    border-radius: 4px;
+    text-decoration: none;
+    margin-top: 10px;
+    font-weight: 600;
+    color: #111;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: 0.5s;
+}
+.container .card:hover .ContentBox a{
+    opacity: 1;
+    transform: translateY(0px);
+    transition-delay: 0.75s;
+}
